@@ -1,0 +1,62 @@
+.header-container{
+    position: sticky;
+    inset: 0;
+    z-index: 1;
+    
+}
+
+/* Styles for active link */
+.active-link {
+    position: relative;
+    padding-bottom: 5px;
+    font-weight: bold; 
+}
+
+.active-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white; 
+}
+
+.heart-beat {
+    animation: heartbeat 1s infinite;   
+}
+
+/* Define the heartbeat animation */
+@keyframes heartbeat {
+    
+    50% {
+        transform: scale(1.2); /* Pulse outward */
+    }
+    
+}
+
+@media screen and (max-width: 640px) {
+    .navbartop{
+        display: none;
+    }
+
+    .logo{
+        display: block;
+        padding: 20px 0 20px 0;
+        
+        height: 100%;
+    }
+
+    .navlinks{
+        position: absolute;
+        width:100%;
+        top: calc(100%);
+        left: 0;
+        font-size: 14px;
+        background-color: #000000b5;
+        
+    }
+    .navlinks > *{
+         margin-bottom: 20px;
+    }
+}

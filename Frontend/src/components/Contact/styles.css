@@ -1,0 +1,6 @@
+.contactusbg{
+    background-image: url('/Images/contactUs.jpg');
+    background-position: center;
+    background-size: cover;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}

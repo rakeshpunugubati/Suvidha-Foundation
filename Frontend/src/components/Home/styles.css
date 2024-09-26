@@ -1,0 +1,32 @@
+
+.internshipbg{
+  background-image: url('/Images/internshipbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* This creates the parallax effect */
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #f8f9fa;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  
+}
+
+.bgcount{
+    background-image: url('/Images/donatecount.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.testimonialbg{
+    background-image: url('/Images/testimonialbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f8f9fa;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    
+  }
+
