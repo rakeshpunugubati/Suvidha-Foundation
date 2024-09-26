@@ -36,7 +36,7 @@ function Header() {
                 <img
                   src="Images/SuvidhaLogo.jpg"
                   alt="Suvidha Foundataion"
-                  className='logo bg-gray-800'
+                  className='logo bg-gray-800 w-11/12 sm:w-full'
                 />
               </NavLink>
             </div>
@@ -45,7 +45,7 @@ function Header() {
             <FontAwesomeIcon
               icon={visible ? faTimes : faBars} // Change icon based on the visibility state
               onClick={toggleMenu} // Toggle menu visibility
-              className='text-4xl text-gray-500 w-14 sm:hidden cursor-pointer' // Only visible on small screens
+              className='text-4xl text-gray-500 w-14 sm:hidden border-2 border-gray-500 m-2 rounded-md py-1 cursor-pointer' // Only visible on small screens
             />
 
             {/* Navbar menu */}

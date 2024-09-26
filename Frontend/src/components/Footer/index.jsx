@@ -41,10 +41,10 @@ function Footer() {
         <div className='mt-4'>
           <h2 className="text-xs sm:text-lg font-bold text-yellow-400">Important Links</h2>
           <ul className="mt-2">
-            <li><a href="" className='text-xs sm:text-lg hover:underline'>License1</a></li>
-            <li><a href="" className='text-xs sm:text-lg hover:underline'>License2</a></li>
-            <li><a href="" className='text-xs sm:text-lg hover:underline'>License3</a></li>
-            <li><a href="" className='text-xs sm:text-lg hover:underline'>License4</a></li>
+            <li><a href="/Images/80G_APROVAL.pdf" target="_blank" className='text-xs sm:text-lg hover:underline'>80G Certificate</a></li>
+            <li><a href="/Images/12A_APPROVAL.pdf" target="_blank" className='text-xs sm:text-lg hover:underline'>12A Certificate</a></li>
+            <li><a href="/Images/CSR.pdf" target="_blank" className='text-xs sm:text-lg hover:underline'>CSR Certificate</a></li>
+            <li><a href="/Images/suvidha_pan_card.pdf" target="_blank" className='text-xs sm:text-lg hover:underline'>Suvidha Pan Card</a></li>
           </ul>
         </div>
 

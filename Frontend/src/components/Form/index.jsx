@@ -7,7 +7,7 @@ function Form() {
         mobile: '',
         message: '',
       });
-    
+      const [loading, setLoading] = useState(false);
       const handleChange = (e) => {
         setFormData({
           ...formData,
@@ -19,6 +19,7 @@ function Form() {
       // Api call to submit Internship form data
       const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         try {
             const date = new Date().toLocaleString();
           const response = await axios.post(`${apiUrl}/contact`, {date, ...formData} );
@@ -31,6 +32,8 @@ function Form() {
         } catch (error) {
           console.log('Error: ' + error);
           alert('Error submitting form');
+        } finally {
+          setLoading(false); 
         }
         setFormData({
           name: '',
@@ -73,6 +76,7 @@ function Form() {
           name='mobile'
           pattern='[6-9]{1}[0-9]{9}'
           placeholder='7832212313'
+          value={formData.mobile}
           onInvalid={(e) => e.target.setCustomValidity('Enter a valid mobile number')}
           onInput={(e) => e.target.setCustomValidity('')}
           onChange={handleChange}
@@ -94,8 +98,9 @@ function Form() {
       <button
         type='submit'
         className='w-full bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600'
+        disabled={loading} // Disable button while loading
       >
-        Send Message
+        {loading ? 'Submitting...' : 'Send Message'}
       </button>
     </form>
     </div>

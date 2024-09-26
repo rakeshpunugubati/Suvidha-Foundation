@@ -11,7 +11,7 @@ function Internship() {
         domain: '',
         coverLetter:'',
     });
-    
+    const [loading, setLoading] = useState(false);
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -24,7 +24,7 @@ function Internship() {
     // To handle api contact form api call
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+        setLoading(true);
         try {
             const date = new Date().toLocaleString();
             const response = await axios.post(`${apiUrl}/internship`, {date, ...formData} )
@@ -37,6 +37,8 @@ function Internship() {
         } catch (error) {
             console.log('Error: ' + error);
             alert('Error submitting form');
+        } finally {
+            setLoading(false);
         }
         setFormData({
             name: '',
@@ -97,16 +99,18 @@ function Internship() {
                     />
                 </div>
                 <div>
-                    <label>Mobile Number</label>
+                    <label className='text-gray-700'>Mobile Number</label>
                     <input
-                        type='tel'
-                        name='mobile'
-                        pattern='[6-9]{1}[0-9]{9}'
-                        placeholder='7832212313'
-                        onInvalid={(e) => e.target.setCustomValidity('Enter a valid mobile number')}
-                        value={formData.mobile}
-                        onChange={handleChange}
-                        className='w-full mt-2 p-2 border border-gray-300 rounded bg-black bg-opacity-30'
+                      type='tel'
+                      name='mobile'
+                      pattern='[6-9]{1}[0-9]{9}'
+                      placeholder='7832212313'
+                      value={formData.mobile}
+                      onInvalid={(e) => e.target.setCustomValidity('Enter a valid mobile number')}
+                      onInput={(e) => e.target.setCustomValidity('')}
+                      onChange={handleChange}
+                      className='w-full mt-2 p-2 border border-gray-300 rounded bg-black bg-opacity-30'
+                      required 
                     />
                 </div>
                 <div>
@@ -172,8 +176,9 @@ function Internship() {
                 <button
                     type='submit'
                     className='w-full bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600'
+                    disabled={loading} 
                 >
-                    Submit Application
+                    {loading ? 'Submitting...' : 'Submit Application'}
                 </button>
             </form>
         </div>
