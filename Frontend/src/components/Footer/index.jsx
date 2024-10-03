@@ -30,10 +30,10 @@ function Footer() {
         <div className='mt-5'>
           <h2 className=" text-xs sm:text-lg font-bold text-yellow-400">Quick Links</h2>
           <ul className="mt-2">
-            <li><NavLink to="/about" className=" text-xs sm:text-lg hover:underline">About Us</NavLink></li>
-            <li><NavLink to="/donate" className=" text-xs sm:text-lg hover:underline">Donate</NavLink></li>
-            <li><NavLink to="/internships" className=" text-xs sm:text-lg hover:underline">Internships</NavLink></li>
-            <li><NavLink to="/contact" className=" text-xs sm:text-lg hover:underline">Contact Us</NavLink></li>
+            <li><NavLink to={'/about'} className=" text-xs sm:text-lg hover:underline">About Us</NavLink></li>
+            <li><NavLink to={'/donate'} className=" text-xs sm:text-lg hover:underline">Donate</NavLink></li>
+            <li><NavLink to={'/internships'} className=" text-xs sm:text-lg hover:underline">Internships</NavLink></li>
+            <li><NavLink to={'/contact'} className=" text-xs sm:text-lg hover:underline">Contact Us</NavLink></li>
           </ul>
         </div>
 
